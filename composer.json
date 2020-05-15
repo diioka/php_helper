@@ -1,0 +1,13 @@
+{
+    "name": "iiokadaiki/php_helper",
+    "authors": [
+        {
+            "name": "diioka",
+            "email": "idaiki.0202@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.1"
+    }
+}
