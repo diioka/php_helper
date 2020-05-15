@@ -6,6 +6,9 @@
             "email": "idaiki.0202@gmail.com"
         }
     ],
+    "autoload": {
+        "files": ["helper.php"]
+    },
     "require": {},
     "require-dev": {
         "phpunit/phpunit": "^9.1"
