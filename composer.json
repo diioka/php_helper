@@ -6,6 +6,14 @@
             "email": "idaiki.0202@gmail.com"
         }
     ],
+    "autoload": {
+        "files": ["helper.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "require": {},
     "require-dev": {
         "phpunit/phpunit": "^9.1"
