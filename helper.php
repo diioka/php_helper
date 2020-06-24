@@ -47,3 +47,70 @@ function includesString(string $haystack, string $needle): bool {
     if (strpos($haystack, $needle) !== false) return true;
     return false;
 }
+
+/**
+ * foreachで使用可能なrange関数
+ * This is a range function that can be used with foreach.
+ * @param int $start
+ * @param int $end
+ * @param int $step
+ * @return Range
+ */
+function rge(int $start, int $end, int $step = 1) {
+    return new Range($start, $end, $step);
+}
+
+/**
+ * Class Range
+ */
+class Range implements Iterator {
+
+    /** @var int $start */
+    private $start;
+
+    /** @var int $end */
+    private $end;
+
+    /** @var int $step */
+    private $step;
+
+    /** @var $key */
+    private $key;
+
+    /** @var $current */
+    private $current;
+
+    public function __construct(int $start, int $end, int $step = 1)
+    {
+        $this->start = $start;
+        $this->end   = $end;
+        $this->step  = $step;
+    }
+
+    public function rewind()
+    {
+        $this->key     = 0;
+        $this->current = $this->start;
+    }
+
+    public function next()
+    {
+        $this->key += 1;
+        $this->current += $this->step;
+    }
+
+    public function key()
+    {
+        return $this->key;
+    }
+
+    public function current()
+    {
+        return $this->current;
+    }
+
+    public function valid()
+    {
+        return $this->current() <= $this->end;
+    }
+}
