@@ -114,3 +114,30 @@ class Range implements Iterator {
         return $this->current() <= $this->end;
     }
 }
+
+/**
+ * foreachで使用可能な高速なrange関数
+ * This is a fast range function that can be used with foreach.
+ * @param int $start
+ * @param int $end
+ * @param int $step
+ * @return Generator
+ */
+function rg(int $start, int $end, $step = 1) {
+    if ($start <= $end) {
+        if ($step <= 0) {
+            throw new LogicException('Step must be positive');
+        }
+        for ($i = $start; $i <= $end; $i += $step) {
+            yield $i;
+        }
+    } else {
+        if ($step >= 0) {
+            throw new LogicException('Step must be negative');
+        }
+        for ($i = $start; $i >= $end; $i += $step) {
+            yield $i;
+        }
+    }
+}
+
