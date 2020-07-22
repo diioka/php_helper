@@ -141,3 +141,11 @@ function rg(int $start, int $end, $step = 1) {
     }
 }
 
+/**
+ * 改行コード付きで文字列を出力する関数
+ * This function outputs a string with a line feed code.
+ * @param $string
+ */
+function echoln($string) {
+    echo($string.PHP_EOL);
+}
