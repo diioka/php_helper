@@ -152,6 +152,7 @@ function echoln($string) {
 
 /**
  * ディレクトリを再起的に削除する関数
+ * 参考: https://www.sejuku.net/blog/78776
  * @param string $dir
  * @return bool
  */
