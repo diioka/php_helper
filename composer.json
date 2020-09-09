@@ -1,5 +1,8 @@
 {
-    "name": "iiokadaiki/php_helper",
+    "name": "diioka/php_helper",
+    "description": "php_helper",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "diioka",
